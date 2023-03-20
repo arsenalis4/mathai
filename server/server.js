@@ -4,7 +4,7 @@ const path = require("path");
 const prompt = require('prompt-sync')();
 const {Configuration, OpenAIApi} = require('openai');
 const configuration = new Configuration({
-    apiKey: "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"
+    apiKey: "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"
 });
 const openai = new OpenAIApi(configuration);
 const PORT = process.env.PORT || 3000;
