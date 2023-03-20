@@ -111,7 +111,6 @@ export function ChoiceBody(){
                         axios.post("http://54.180.21.244:3000/answer", {
                             question: value + "(풀이는 한국어로)"
                         }).then((res)=>{
-                            console.log(res);
                             navigate("/ans", {state:{
                                 question: value,
                                 answer: res.data.data
