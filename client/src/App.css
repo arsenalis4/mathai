@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Londrina+Shadow&family=Poor+Story&display=swap');
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.homeHeader{
+  height: 10vh;
+  background: #3E4958;
+  width: 100%;
+}
+
+.homeLogo{
+  position: relative;
+  margin-left: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.homeLogoImage{
+  width: 4vh;
+  height: 4vh;
+}
+
+.homeBody{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.homeBodySlogan{
+  font-family: 'Poor Story';
+  font-size: 2rem;
+}
+
+.homeBodyName{
+  font-family: 'Londrina Shadow';
+  font-size: 6rem;
+}
+
+.homeBodyFirstItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeBodySecondItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  cursor: pointer;
+}
+
+.homeBodySelector{
+  font-family: 'Londrina Shadow';
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 5vh;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+
+.choiceBody{
+  height: 90vh;
+}
+
+.choiceQuestion{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.choiceQuestionBox{
+  width: 95%;
+  height: 30%;
+}
+
+.mathEdit{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly
+}
+
+.mathEditText{
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  justify-content: space-between;
+}
+
+.mathBox{
+  display: none;
+  gap: 1rem;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.mathIconBox{
+  display: flex;
+}
+
+.mathBox > div:nth-child(1){
+  margin-left: 0.5rem;
+}
+
+.mathBox > div:nth-last-child(1){
+  margin-right: 0.5rem;
+}
+
+.mathIcon{
+  height: 5vh;
+  width: 5vh;
+}
+
+.choiceAnswer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 90vh;
+  justify-content: space-evenly;
+}
+
+#choiceQuestionInputBox{
+  font-size: 1.25rem;
+  height: 100%;
+  width: 100%;
+}
+
+.choiceAnswerBox{
+  height: 40vh;
+  overflow: scroll;
+  width: 95%;
+}
+
+.askBox{
+  height: 10vh;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+#askSubmitBox{
+  height: 3.5vh;
+  width: 100%;
+}
+
+.isChoice{
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.questionRecall{
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.questionRecallBox{
+  width: 95%;
+  height: 15vh;
+}
+
+.activityIndicator{
+  height: 3rem;
+  position: fixed;
+  top: 50%;
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.activityIndicator > img{
+  width: 3rem;
+  height: 3rem;
+}
