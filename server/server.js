@@ -2,12 +2,15 @@ const express = require('express');
 const app = express();
 const path = require("path");
 const prompt = require('prompt-sync')();
+require('dotenv').config();
+
 const {Configuration, OpenAIApi} = require('openai');
 const configuration = new Configuration({
-    apiKey: "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"
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY
 });
 const openai = new OpenAIApi(configuration);
 const PORT = process.env.PORT || 3000;
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
