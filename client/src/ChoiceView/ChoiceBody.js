@@ -11,6 +11,18 @@ export function ChoiceBody(){
         setValue(e.target.value);
     });
 
+    const mathText = (str, txtValue) => {
+        let txtArea = document.getElementById('choiceQuestionInputBox');                      
+        let selectPos = txtArea.selectionStart;           
+        let beforeTxt = txtValue.substring(0, selectPos);      
+        let afterTxt = txtValue.substring(txtArea.selectionEnd, txtValue.length); 
+        let addString = str
+        setValue(beforeTxt + addString + afterTxt);   
+        selectPos = selectPos + addString.length;
+        txtArea.selectionStart = selectPos;
+        txtArea.selectionEnd = selectPos;
+    }
+
     return (
         <div className="choiceBody">
             <div className="choiceQuestion">
@@ -35,63 +47,63 @@ export function ChoiceBody(){
                             if(value === null){
                                 setValue("()/()");
                             } else{
-                                setValue(value+"()/()");
+                                mathText("()/()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/분수.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("()^()");
                             } else{
-                                setValue(value+"()^()");
+                                mathText("()^()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/지수.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("sqrt()");
                             } else{
-                                setValue(value+"sqrt()");
+                                mathText("sqrt()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/루트.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("d()/d()");
                             } else{
-                                setValue(value+"d()/d()");
+                                mathText("d()/d()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/미분.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("d^2()/d^2()");
                             } else{
-                                setValue(value+"d^2()/d^2()");
+                                mathText("d^2()/d^2()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/이계도미분.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("∫()d()");
                             } else{
-                                setValue(value+"∫()d()");
+                                mathText("∫()d()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/부정적분.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("∫()d()|[(),()]");
                             } else{
-                                setValue(value+"∫()d()|[(),()]");
+                                mathText("∫()d()|[(),()]", value);
                             }
                         }}><img className="mathIcon" src="img/수식/정적분.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("Σ()_()=()~()");
                             } else{
-                                setValue(value+"Σ()_()=()~()");
+                                mathText("Σ()_()=()~()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/시그마.svg"/></div>
                         <div className="mathIconBox" onClick={()=>{
                             if(value === null){
                                 setValue("lim(()->())()");
                             } else{
-                                setValue(value+"lim(()->())()");
+                                mathText("lim(()->())()", value);
                             }
                         }}><img className="mathIcon" src="img/수식/극한.svg"/></div>
                     </div>
