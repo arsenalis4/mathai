@@ -122,7 +122,7 @@ export function ChoiceBody(){
                 <div className="askBox">
                     <input type="submit" id="askSubmitBox" value="Ask" onClick={()=>{
                         $(".activityIndicator").css("display", "flex");
-                        axios.post("http://54.180.21.244:3000/answer", {
+                        axios.post("https://mathaigpt.co.kr/answer", {
                             question: value + "(풀이는 한국어로)"
                         }).then((res)=>{
                             navigate("/ans", {state:{
