@@ -26,7 +26,7 @@ export function ChoiceBody(){
     return (
         <div className="choiceBody">
             <div className="choiceQuestion">
-                <div>
+                <div className="choiceQuestionText">
                     문제
                 </div>
                 <div className="choiceQuestionBox">
@@ -34,13 +34,15 @@ export function ChoiceBody(){
                 </div>
                 <div className="mathEdit">
                     <div className="mathEditText">
-                        <div onClick={()=>{
+                        <div className="choiceQuestionText" onClick={()=>{
                             $(".mathBox").css('display', 'flex');
                         }}>수식</div>
-                        <div style={{"visibility": "hidden"}}>수식</div>
-                        <div onClick={()=>{
+                        <div className="choiceQuestionText" style={{"visibility": "hidden"}}>수식</div>
+                        <div className="choiceQuestionQuit" onClick={()=>{
                             $(".mathBox").css('display', 'none');
-                        }}>x</div>
+                        }}>
+                            <img src="img/Vector (8).svg" />
+                        </div>
                     </div>
                     <div className="mathBox">
                         <div className="mathIconBox" onClick={()=>{

@@ -8,10 +8,10 @@ export function AnswerBody(){
     return(
         <div className="choiceAnswer">
             <div className="questionRecall">
-                <div>문제</div>
+                <div className="choiceQuestionText">문제</div>
                 <textarea className="questionRecallBox" value={state.question} />
             </div>
-            <div>
+            <div className="choiceQuestionText">
                 답변
             </div>
             <div className="choiceAnswerBox">

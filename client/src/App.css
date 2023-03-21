@@ -156,14 +156,32 @@ a{
 }
 
 #askSubmitBox{
-  height: 3.5vh;
+  height: 5vh;
+  background: #2772B7;
+  border: 1px solid #0075FF;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-family: 'Poor Story';
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   width: 100%;
 }
 
 .isChoice{
+  width: 40%;
   height: 5vh;
+  border: 1px solid #0075FF;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-family: 'Poor Story';
+  color: black;
   display: flex;
+  justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .questionRecall{
@@ -192,4 +210,29 @@ a{
 .activityIndicator > img{
   width: 3rem;
   height: 3rem;
+}
+
+.choiceQuestionText{
+  font-size: 1.25rem;
+  font-family: 'Poor Story';
+}
+
+.choiceQuestionQuit{
+  display: flex;
+  scale: 0.75;
+}
+
+.reQuestion{
+  height: 5vh;
+  background: #2772B7;
+  border: 1px solid #0075FF;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-family: 'Poor Story';
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
 }
