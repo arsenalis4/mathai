@@ -1,9 +1,13 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import $ from 'jquery';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Camera } from "../CameraView/Camera";
 
 export function ChoiceBody(){
+    const loc = useLocation();
+    const state = loc.state;
+
     const navigate = useNavigate();
     const [value, setValue] = useState(null);
     const [answer, setAnswer] = useState(null);
@@ -23,11 +27,19 @@ export function ChoiceBody(){
         txtArea.selectionEnd = selectPos;
     }
 
+    useEffect(()=>{
+        if(state === null){
+            //Do Something...
+        } else{
+            setValue(state.canvasQuestion);
+        }
+    }, []);
+
     return (
         <div className="choiceBody">
             <div className="choiceQuestion">
                 <div className="choiceQuestionHeaderFlex">
-                    <div className="writeImage" style={{"visibility": "hidden", "margin-left": "5%"}}><img src="img/signature.png" /></div>
+                    <Camera/>
                     <div className="choiceQuestionText">문제</div>
                     <div className="writeImage" style={{"margin-right": "5%"}} onClick={()=>{navigate("/write");}}><img src="img/signature.png" /></div>
                 </div>

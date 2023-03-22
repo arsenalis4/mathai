@@ -252,3 +252,48 @@ a{
 .writeImage > img{
   width: 100%;
 }
+
+.canvasBody{
+  height: 100vh;
+}
+
+.canvas{
+  border: 1px solid black;
+  width: 100%;
+  height: 80vh;
+}
+
+.translateFlex{
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.translateText{
+  align-items: center;
+  border: 1px solid #0075ff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-family: Poor Story;
+  font-size: 1.125rem;
+  height: 5vh;
+  width: 40%;
+  justify-content: center;
+}
+
+#file {
+  display: none;
+}
+
+#installApp{
+  scale: 0.75;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#installApp > img{
+  display: flex;
+}
