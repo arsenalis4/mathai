@@ -138,7 +138,6 @@ export function ChoiceBody(){
                         $(".activityIndicator").css("display", "flex");
                         let txtArea = document.getElementById('choiceQuestionInputBox');
                         let txtText = txtArea.value;
-                        console.log(txtText);
                         axios.post("https://mathaigpt.co.kr/answer", {
                             question: txtText + "(풀이는 한국어로)"
                         }).then((res)=>{
