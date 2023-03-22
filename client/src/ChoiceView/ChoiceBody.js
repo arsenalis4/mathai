@@ -136,11 +136,14 @@ export function ChoiceBody(){
                 <div className="askBox">
                     <input type="submit" id="askSubmitBox" value="Ask" onClick={()=>{
                         $(".activityIndicator").css("display", "flex");
+                        let txtArea = document.getElementById('choiceQuestionInputBox');
+                        let txtText = txtArea.value;
+                        console.log(txtText);
                         axios.post("https://mathaigpt.co.kr/answer", {
-                            question: value + "(풀이는 한국어로)"
+                            question: txtText + "(풀이는 한국어로)"
                         }).then((res)=>{
                             navigate("/ans", {state:{
-                                question: value,
+                                question: txtText,
                                 answer: res.data.data
                             }});
                         });
