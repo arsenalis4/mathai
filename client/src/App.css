@@ -236,3 +236,19 @@ a{
   cursor: pointer;
   width: 40%;
 }
+
+.choiceQuestionHeaderFlex{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.writeImage{
+  width: 3.5vh;
+}
+
+.writeImage > img{
+  width: 100%;
+}

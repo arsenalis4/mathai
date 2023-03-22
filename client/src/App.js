@@ -4,6 +4,7 @@ import { Answer } from './AnswerView/Answer';
 import './App.css';
 import { Choice } from './ChoiceView/Choice';
 import { Home } from './HomeView/Home';
+import { WriteBody } from './WriteView/WriteBody';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/choice" element={<Choice />} />
         <Route path="/ans" element={<Answer />} />
+        <Route path="/write" element={<WriteBody />} />
       </Routes>
     </Router>
   );

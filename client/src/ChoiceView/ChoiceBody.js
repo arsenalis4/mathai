@@ -26,8 +26,10 @@ export function ChoiceBody(){
     return (
         <div className="choiceBody">
             <div className="choiceQuestion">
-                <div className="choiceQuestionText">
-                    문제
+                <div className="choiceQuestionHeaderFlex">
+                    <div className="writeImage" style={{"visibility": "hidden", "margin-left": "5%"}}><img src="img/signature.png" /></div>
+                    <div className="choiceQuestionText">문제</div>
+                    <div className="writeImage" style={{"margin-right": "5%"}} onClick={()=>{navigate("/write");}}><img src="img/signature.png" /></div>
                 </div>
                 <div className="choiceQuestionBox">
                     <textarea type="text-area" id="choiceQuestionInputBox" value={value} onChange={onChange}/>
