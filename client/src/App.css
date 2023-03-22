@@ -297,3 +297,9 @@ a{
 #installApp > img{
   display: flex;
 }
+
+#eraser{
+  position: fixed;
+  top: 2vh;
+  right: 10%;
+}

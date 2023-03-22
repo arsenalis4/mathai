@@ -37,6 +37,41 @@ export function Write() {
     setIsDrawing(false);
   }
 
+  function handleCanvasTouchStart(e) {
+    const touch = e.touches[0];
+    setIsDrawing(true);
+    setLastX(touch.clientX - canvasRef.current.getBoundingClientRect().left);
+    setLastY(touch.clientY - canvasRef.current.getBoundingClientRect().top);
+  }
+  
+  function handleCanvasTouchMove(e) {
+    if (isDrawing) {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext('2d');
+      const touch = e.touches[0];
+      const x = touch.clientX - canvas.getBoundingClientRect().left;
+      const y = touch.clientY - canvas.getBoundingClientRect().top;
+  
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+  
+      setLastX(x);
+      setLastY(y);
+    }
+  }
+  
+  function handleCanvasTouchEnd() {
+    setIsDrawing(false);
+  }
+
+  function handleClearCanvas() {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
   async function recognizeText(){
     const canvas = canvasRef.current;
     const blob = await new Promise(resolve => canvas.toBlob(resolve));
@@ -93,11 +128,17 @@ export function Write() {
         onMouseDown={handleCanvasMouseDown}
         onMouseMove={handleCanvasMouseMove}
         onMouseUp={handleCanvasMouseUp}
+        onTouchStart={handleCanvasTouchStart}
+        onTouchMove={handleCanvasTouchMove}
+        onTouchEnd={handleCanvasTouchEnd}
       />
-      <div className="translateFlex" onClick={()=>{
-        recognizeText();
-      }}>
-        <div className='translateText'>텍스트 변환하기</div>
+      <div className="translateFlex">
+        <div className='writeImage' id="eraser" onClick={()=>{handleClearCanvas();}}>
+          <img src="img/eraser.png" />
+        </div>
+        <div className='translateText' onClick={()=>{
+          recognizeText();
+        }}>텍스트 변환하기</div>
       </div>
       <div className="activityIndicator" style={{"display": "none"}}>
         <img src="img/loading-gif.gif" />
