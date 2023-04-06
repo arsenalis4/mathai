@@ -138,8 +138,8 @@ export function ChoiceBody(){
                         $(".activityIndicator").css("display", "flex");
                         let txtArea = document.getElementById('choiceQuestionInputBox');
                         let txtText = txtArea.value;
-                        axios.post("https://mathaigpt.co.kr/answer", {
-                            question: txtText + "(풀이는 한국어로)"
+                        axios.post("http://localhost:3000/answer", {
+                            question: `-Clearly state the problem with all necessary details, including the domain and any constraints.\n-Use standard mathematical notation and symbols as much as possible.\n-Break down the problem into smaller steps and explain each step in detail.\n-Check and verify the answer using different methods, if possible.\n-Use specific keywords to clarify the type of problem, such as "definite integral," "derivative," "trigonometric functions," etc.\n-If possible, provide a context or real-world scenario to help clarify the problem and its relevance.\n-Avoid using ambiguous or unclear language, especially when defining variables or functions.\n-Explain it in Korean\n\nGiven Problem: ${txtText}`
                         }).then((res)=>{
                             navigate("/ans", {state:{
                                 question: txtText,

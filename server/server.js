@@ -25,8 +25,9 @@ app.post("/answer", async (req, res) => {
   try {
     const question = req.body.question;
     const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{role: "user", content: `${question}`}]
+      model: "gpt-4",
+      messages: [{role: "user", content: `${question}`}],
+      temperature: 0.2
     });
 
     return res.status(200).json({
